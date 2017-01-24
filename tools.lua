@@ -1,16 +1,17 @@
 
 local itemuses = {}
 itemuses["tincraft:tin_dagger"] = {uses = 8, group = "snappy", level = 1, strain = 2, fleshy = 4}
-itemuses["tincraft:mallet_and_tin_chisel"] = {uses = 10, group = "cracky", level = 1, strain = 2, fleshy = 2}
+itemuses["tincraft:tin_spade"] = {uses = 10, group = "crumbly", level = 1, strain = 2, fleshy = 3}
+itemuses["tincraft:tin_hatchet"] = {uses = 2, group = "choppy", level = 1, strain = 1, fleshy = 4}
+
 itemuses["tincraft:tin_chisel"] = {uses = 10, level = 1, strain = 2, fleshy = 1}
 itemuses["tincraft:chisel_mallet"] = {uses = 10, level = 1, strain = 2, fleshy = 1}
-itemuses["tincraft:tin_spade"] = {uses = 10, group = "crumbly", level = 1, strain = 2, fleshy = 2}
-itemuses["tincraft:tin_hatchet"] = {uses = 2, group = "choppy", level = 1, strain = 1, fleshy = 5}
+itemuses["tincraft:mallet_and_tin_chisel"] = {uses = 10, group = "cracky", level = 1, strain = 2, fleshy = 3}
 
-local function tincaps(toolname)
+local function tintool_capabilities(toolname)
 	return {
 		full_punch_interval = 2.0,
-		max_drop_level = 0,
+		max_drop_level = itemuses[toolname].level,
 		damage_groups = {fleshy = itemuses[toolname].fleshy},
 	}
 end
@@ -27,7 +28,7 @@ local function use_tin_item(itemstack,user,pointedthing)
 	if pointedthing.type == "object" then
 		local objname = pointedthing.ref:get_luaentity().name
 
-		pointedthing.ref:punch(user, 1, tincaps(itemstack:get_name()) )
+		pointedthing.ref:punch(user, 1, tintool_capabilities(itemstack:get_name()) )
 
 		if objname ~= "__builtin:item" then
 			itemstack:add_wear(math.ceil(65536/math.ceil(maxuses*1.5)))
