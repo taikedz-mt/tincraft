@@ -1,6 +1,3 @@
--- Tin ore is very commn and has very little use. Here's some tin tools.
--- Useful in that it's better than your bare hands or a wooden/stone implement
--- Pretty pathetic in that it breaks fairly quickly
 
 local itemuses = {}
 itemuses["tincraft:tin_dagger"] = {uses = 8, group = "snappy", level = 1, strain = 2, fleshy = 4}
