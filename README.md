@@ -9,9 +9,11 @@ Here's some crafts to make tin marginally useful.
 All tools are pretty effective - but they just drop items on the floor.
 
 * Cheap Dagger - same recipe as a sword
-* Brittle Chisel - same recipe as a pick
 * Weak Hatchet - same recipe as an axe
 * Toy Spade - same recipe as a shovel
+* Brittle Chisel - tin ingot on top of a stick
+* Chisel Mallet - tree block on top of a stick
+* Mallet and Chisel - Chisel and Mallet in the craft grid
 
 They do OK damage to mobs, but don't expect them to last long. They're also useless against players.
 
