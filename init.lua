@@ -1,4 +1,4 @@
---some crafts to make tin less useless.
+-- Some crafts to make tin less useless.
 
 tincraft = {}
 
@@ -11,14 +11,4 @@ end
 
 tcimport("strongtin.lua")
 tcimport("tools.lua")
-
-
-
-if minetest.get_modpath("protector") then
-	tcimport("protector.lua")
-end
-
-if minetest.get_modpath("inbox") then
-	tcimport("inbox.lua")
-end
 
