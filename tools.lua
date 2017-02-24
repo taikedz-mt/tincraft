@@ -1,8 +1,8 @@
 
 local itemuses = {}
 itemuses["tincraft:tin_dagger"] = {uses = 8, group = "snappy", level = 1, strain = 2, fleshy = 4}
-itemuses["tincraft:tin_spade"] = {uses = 10, group = "crumbly", level = 1, strain = 2, fleshy = 3}
-itemuses["tincraft:tin_hatchet"] = {uses = 2, group = "choppy", level = 1, strain = 1, fleshy = 4}
+itemuses["tincraft:tin_spade"] = {uses = 10, group = "crumbly", level = 1, strain = 2, fleshy = 2}
+itemuses["tincraft:tin_hatchet"] = {uses = 2, group = "choppy", level = 1, strain = 1, fleshy = 3}
 
 itemuses["tincraft:tin_chisel"] = {uses = 10, level = 1, strain = 2, fleshy = 1}
 itemuses["tincraft:chisel_mallet"] = {uses = 10, level = 1, strain = 2, fleshy = 1}
@@ -26,23 +26,21 @@ local function use_tin_item(itemstack,user,pointedthing)
 	local strain = useprofile.strain
 
 	if pointedthing.type == "object" then
-		if pointedthing.ref:is_player() then
-			local hp = pointedthing.ref:get_hp()
-			pointedthing.ref:set_hp(hp - 0.5)
-			-- Nevermind armor. Face-stab.
-			-- But in which case, make sure it's not OP
-			itemstack:add_wear(math.ceil(65536/math.ceil(maxuses*2.5)))
-			return itemstack
-		end
-
-		local objname = pointedthing.ref:get_luaentity().name
 
 		pointedthing.ref:punch(user, 1, tintool_capabilities(itemstack:get_name()) )
 
-		if objname ~= "__builtin:item" then
-			itemstack:add_wear(math.ceil(65536/math.ceil(maxuses*1.5)))
-			return itemstack
+		-- IFF not a player, can check for regular bject
+		if not pointedthing.ref:is_player() then
+			local objname = pointedthing.ref:get_luaentity().name
+
+			if objname == "__builtin:item" then
+				return
+			end
 		end
+
+		-- We have now acertained that it is either a player or a mob
+		itemstack:add_wear(math.ceil(65536/math.ceil(maxuses*1.5)))
+		return itemstack
 
 	elseif pointedthing.type == "node" then
 		local pos = pointedthing.under
