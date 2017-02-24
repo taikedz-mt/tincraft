@@ -26,6 +26,15 @@ local function use_tin_item(itemstack,user,pointedthing)
 	local strain = useprofile.strain
 
 	if pointedthing.type == "object" then
+		if pointedthing.ref:is_player() then
+			local hp = pointedthing.ref:get_hp()
+			pointedthing.ref:set_hp(hp - 0.5)
+			-- Nevermind armor. Face-stab.
+			-- But in which case, make sure it's not OP
+			itemstack:add_wear(math.ceil(65536/math.ceil(maxuses*2.5)))
+			return itemstack
+		end
+
 		local objname = pointedthing.ref:get_luaentity().name
 
 		pointedthing.ref:punch(user, 1, tintool_capabilities(itemstack:get_name()) )
