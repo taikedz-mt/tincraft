@@ -4,7 +4,7 @@ Tin, from moreores, is pretty useless in most games.
 
 Here's some crafts to make tin marginally useful.
 
-![Tin Tools](screenshot.png)
+![Tin Tools](https://raw.githubusercontent.com/taikedz/minetest-tincraft/4ee0325bbcec36c7cc28aa5135c30f5324a78291/screenshot.png)
 
 ## Tin Tools
 
