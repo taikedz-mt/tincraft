@@ -1,0 +1,2 @@
+# Enable transforming tin into strong tin
+tincraft.strongtin (Enable Strong Tin) bool false

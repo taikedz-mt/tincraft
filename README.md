@@ -4,6 +4,8 @@ Tin, from moreores, is pretty useless in most games.
 
 Here's some crafts to make tin marginally useful.
 
+![Tin Tools](screenshot.png)
+
 ## Tin Tools
 
 All tools are pretty effective - but they just drop items on the floor.
@@ -19,7 +21,13 @@ They do OK damage to mobs, but don't expect them to last long. They're also usel
 
 ## Tin Recipes
 
-If you are stuck for steel, you can always:
+You can enable an additional craft recipe, Strong Tin - by default it is off.
+
+To enable in client, use the Settings tab, choose Advanced Settings, and expand Mods : tincraft. Enable strong tin.
+
+To enable on server, add `tincraft.strongtin = true` to your `minetest.conf`.
+
+With strong tin, players can make steel:
 
 1. Make strong tin using 3 tin ingots
 2. Make a stone and metal mix using tin and stone
