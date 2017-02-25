@@ -17,7 +17,7 @@ All tools are pretty effective - but they just drop items on the floor.
 * Chisel Mallet - tree block on top of a stick
 * Mallet and Chisel - Chisel and Mallet in the craft grid
 
-They do OK damage to mobs, but don't expect them to last long. They're also useless against players.
+They do OK damage to mobs, but don't expect them to last long.
 
 ## Tin Recipes
 
